@@ -1,0 +1,20 @@
+<div class="jambotron">
+    <h1>All posts</h1>
+     
+
+</div>
+
+<ul>
+    <li *ngFor="let p of allPosts" appHighlight>
+        <!-- for specific id -->
+            <a routerLink="/dashboard/details/{{p.id}}">{{p.title}}}</a>
+    </li>
+</ul>
+<h1>All todos</h1>
+<ul>
+    <li *ngFor="let t of todos ">
+        <a routerLink="/dashboard/details">{{t.title}}</a>
+    </li>
+
+    
+</ul>

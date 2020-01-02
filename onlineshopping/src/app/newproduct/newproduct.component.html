@@ -1,0 +1,16 @@
+<form (ngSubmit)="AddNewProduct()">
+
+    Title :
+    <input name="title" type="text" [(ngModel)]="newproduct.title" class="form-control" /> Price :
+    <input name="price" type="number" [(ngModel)]="newproduct.price" class="form-control" /> Rating :
+    <input name="rating" type="number" [(ngModel)]="newproduct.rating" class="form-control" /> Quantity :
+    <input name="quantity" type="number" [(ngModel)]="newproduct.quantity" class="form-control" /> Likes :
+    <input name="likes" type="number" [(ngModel)]="newproduct.likes" class="form-control" /> Image URL :
+    <input name="imageUrl" type="text" [(ngModel)]="newproduct.imageUrl" class="form-control" />
+
+
+    <button class="btn btn-success">
+        Add
+        <span class="glyphicon glyphicon-plus-sign"></span>
+    </button>
+</form>

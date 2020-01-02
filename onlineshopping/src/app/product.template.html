@@ -1,0 +1,23 @@
+<!-- <div class="productStyle"> -->
+<div [ngClass]="{'productStyle' : true ,'Selected' : isSelected}">
+    <h2>{{productdetails.title}}</h2>
+    <h4>Add to cart :
+        <input type="checkbox" [disabled]="!productdetails.quantity" [(ngModel)]="isSelected" (change)="AddtoCart()"/> </h4>
+    <h4>Price : {{productdetails.price | currency:'INR' }}</h4>
+    <h4>Rating : {{productdetails.rating}}</h4>
+    <!-- <img [src]='productdetails.imageUrl'[ngClass]="{'OutOfStock' : !productdetails.quantity}" height="200px" width="200px" /> -->
+    <img [src]='productdetails.imageUrl' [ngStyle]="productdetails.quantity ? '' : { 'opacity': 0.5}" height="200px" width="200px"
+    />
+
+    <h4>Quantity :
+        <span [ngStyle]="productdetails.quantity ? '' : { color: 'red'}">{{productdetails.quantity | qty : 'items'}} </span>
+    </h4>
+    <a href="#">
+    <button class="btn btn-primary" (click)="incrementLikes()">
+        <span class="glyphicon glyphicon-thumbs-up" ></span>
+        {{productdetails.likes}} </button>
+    </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-danger" (click)=DeleteProduct() >
+        <span class="glyphicon glyphicon-trash"></span>
+    </button>
+</div>

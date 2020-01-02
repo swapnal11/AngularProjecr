@@ -1,0 +1,47 @@
+<div class="jumbotron">
+
+    <!-- <h1>Online shopping</h1> -->
+
+    <body>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrc13fniivgLmIjs1W9z-gFG74LkF7H24xUekmGX2GMTiHy3p3&s
+            " alt="" width="1050" height="300">
+    </body>
+</div>
+<!-- <div class="row">
+    <cartitems></cartitems>
+</div>
+<div class="row">
+    <div *ngFor="let p of products" class="col-md-4">
+        <product [productdetails]="p"></product>
+    </div>
+
+    <!-- ng switch-->
+
+<!--  Enter skill set : <input type="text" [(ngModel)]="txtSkills" />
+    <ul [ngSwitch] ="txtSkills">
+        
+        <li *ngSwitchCase="'C#'">C# </li>
+        <li *ngSwitchCase="'HTML'">HTML </li>
+        <li *ngSwitchCase="'CSS'">CSS </li>
+        <li *ngSwitchCase="'Angular'">Angular </li>
+        <li *ngSwitchCase="'java'">java </li>
+        <li *ngSwitchDefault>no skills found </li>
+        
+        
+    </ul>
+ </div> -->
+
+
+<input type="text" [(ngModel)]="productName">
+<div [ngSwitch]="productName" class="row">
+    <div *ngFor="let p of products">
+        <div *ngSwitchCase="p.title" class="col-md-4">
+            <product [productdetails]="p"></product>
+        </div>
+    </div>
+    <div *ngSwitchDefault>
+        <div *ngFor="let p of products" class="col-md-3">
+            <product [productdetails]="p"></product>
+        </div>
+    </div>
+</div>
